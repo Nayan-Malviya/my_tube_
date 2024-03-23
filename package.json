@@ -1,0 +1,11 @@
+{
+  "name": "my_tube",
+  "version": "1.0.0",
+  "description": "this is a video service app like youtube of my version.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nayan Malviya",
+  "license": "ISC"
+}
