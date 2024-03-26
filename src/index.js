@@ -1,7 +1,5 @@
 import dotenv from "dotenv";
-import express from "express"
-const app=express();
-dotenv.config({path:'./env'});
+dotenv.config({ path: "./env" });
 import connectDB from "./db/index.js";
 // (async()=>{
 //     try {
@@ -19,4 +17,10 @@ import connectDB from "./db/index.js";
 //         throw error;
 //     }
 // })()
-connectDB();
+connectDB()
+  .then(() => {
+    console.log(`app is listening on ${process.env.PORT}`);
+  })
+  .catch((error) => {
+    console.log("error in mongodb!!! ", error);
+  });
