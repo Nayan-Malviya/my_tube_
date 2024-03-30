@@ -11,18 +11,17 @@ const UploadOnCloudinary = async function (localFilePath) {
   try {
     if (!localFilePath) return null;
     //upload the file on cloudinary
-    const response = cloudinary.uploader.upload(localFilePath, {
+    const response = await cloudinary.uploader.upload(localFilePath, {
       resource_type: "auto",
     });
-    console.log("file is upload on cloudinary", response.url);
-    // fs.unlinkSync(localFilePath)
+    // console.log("file is upload on cloudinary resonse is:-", response);
+    fs.unlinkSync(localFilePath);
     return response;
-  } 
-  catch (error) {
-    fs.unlinkSync(localFilePath)//remove the locally saved temporary file as the upload
-    return null; 
+  } catch (error) {
+    fs.unlinkSync(localFilePath); //remove the locally saved temporary file as the upload
+    return null;
   }
 };
 
-export {UploadOnCloudinary}
+export { UploadOnCloudinary };
 //write program for fibonacci series
